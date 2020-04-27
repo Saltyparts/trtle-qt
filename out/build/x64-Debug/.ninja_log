@@ -1,0 +1,15 @@
+# ninja log v5
+0	104	0	CMakeFiles/trtle-qt_autogen	c816ad46b754b242
+1	58	0	CMakeFiles/trtle-qt_autogen	c816ad46b754b242
+1	58	0	CMakeFiles/trtle-qt_autogen	c816ad46b754b242
+1	102	0	CMakeFiles/trtle-qt_autogen	c816ad46b754b242
+113	2024	609732671	CMakeFiles/trtle-qt.dir/src/main.cpp.obj	7685708ef09bf99f
+2	52	0	CMakeFiles/trtle-qt_autogen	c816ad46b754b242
+62	1885	609732714	CMakeFiles/trtle-qt.dir/src/main.cpp.obj	7685708ef09bf99f
+2	56	0	CMakeFiles/trtle-qt_autogen	c816ad46b754b242
+3	54	0	CMakeFiles/trtle-qt_autogen	c816ad46b754b242
+62	1705	609732867	CMakeFiles/trtle-qt.dir/src/tileset_viewer.cpp.obj	90d2d855096abc49
+4	58	0	CMakeFiles/trtle-qt_autogen	c816ad46b754b242
+66	1795	609732879	CMakeFiles/trtle-qt.dir/src/main_window.cpp.obj	ed9bf643d4e68dfe
+3	56	0	CMakeFiles/trtle-qt_autogen	c816ad46b754b242
+58	1655	609732915	CMakeFiles/trtle-qt.dir/src/background_viewer.cpp.obj	d2e6f43d978be340
