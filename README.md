@@ -1,2 +1,2 @@
 # trtle-qt
-A QT front-end for the trtle emulator
+A Qt front-end for the trtle emulator
