@@ -6,7 +6,7 @@
 
 BackgroundMap::BackgroundMap(GameBoy * const gameboy)
     : gameboy(gameboy)
-    , backgroundData(new uint8_t[GameBoy::BackgroundDataLength])
+    , backgroundData(new uint8_t[GameBoy::BackgroundDataLength]())
     , backgroundTexture(
         new QImage(
             GameBoy::BackgroundWidthInPixels,

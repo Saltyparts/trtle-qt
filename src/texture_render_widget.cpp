@@ -7,7 +7,10 @@ TextureRenderWidget::TextureRenderWidget(int width, int height, QImage::Format i
     , renderTexture(new QImage(width, height, imageFormat))
     , textureXOffset(0)
     , textureYOffset(0)
-    , textureResolutionMultiplier(3) {}
+    , textureResolutionMultiplier(3) 
+{
+    renderTexture->fill(Qt::GlobalColor::black);
+}
 
 TextureRenderWidget::~TextureRenderWidget() {
     delete renderTexture;

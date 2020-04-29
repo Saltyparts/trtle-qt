@@ -28,7 +28,7 @@ GameBoy::GameBoy() : gameboy(trtle::gameboy_create()) {
 }
 
 GameBoy::~GameBoy() {
-    trtle::gameboy_delete(&gameboy);
+    trtle::gameboy_delete(gameboy);
 }
 
 void GameBoy::initialize(bool skipBootrom) {

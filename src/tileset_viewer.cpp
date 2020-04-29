@@ -6,7 +6,7 @@
 
 TilesetMap::TilesetMap(GameBoy * const gameboy) 
     : gameboy(gameboy)
-    , tilesetData(new uint8_t[GameBoy::TilesetDataLength])
+    , tilesetData(new uint8_t[GameBoy::TilesetDataLength]())
     , tilesetTexture(
         new QImage(
             GameBoy::TilesetWidthInPixels,

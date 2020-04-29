@@ -13,7 +13,7 @@ MainWindow::MainWindow()
     , updateTimer(new QTimer())
     , renderWidget(new TextureRenderWidget(GameBoy::DisplayWidthInPixels, GameBoy::DisplayHeightInPixels, QImage::Format::Format_Grayscale8, this))
     , ui(new Ui::MainWindow())
-    , textureColorCodes(new uint8_t[GameBoy::DisplayWidthInPixels * GameBoy::DisplayHeightInPixels])
+    , textureColorCodes(new uint8_t[GameBoy::DisplayWidthInPixels * GameBoy::DisplayHeightInPixels]())
 {
     ui->setupUi(this);
     ui->verticalLayout->addWidget(renderWidget);
