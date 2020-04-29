@@ -2,13 +2,13 @@
 <ui version="4.0">
  <author>Chay Nabors</author>
  <class>MainWindow</class>
- <widget class="QMainWindow" name="main_window">
+ <widget class="QMainWindow" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>481</width>
-    <height>462</height>
+    <height>453</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,8 +23,8 @@
    </property>
    <property name="sizeIncrement">
     <size>
-     <width>480</width>
-     <height>432</height>
+     <width>160</width>
+     <height>144</height>
     </size>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -43,28 +43,6 @@
     <property name="bottomMargin">
      <number>0</number>
     </property>
-    <item>
-     <widget class="QOpenGLWidget" name="openGLWidget">
-      <property name="minimumSize">
-       <size>
-        <width>160</width>
-        <height>144</height>
-       </size>
-      </property>
-      <property name="sizeIncrement">
-       <size>
-        <width>160</width>
-        <height>144</height>
-       </size>
-      </property>
-      <property name="baseSize">
-       <size>
-        <width>480</width>
-        <height>432</height>
-       </size>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -148,6 +126,9 @@
    </property>
   </action>
   <action name="actionOAMViewer">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>OAM Viewer</string>
    </property>

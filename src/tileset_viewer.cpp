@@ -26,10 +26,6 @@ TilesetMap::TilesetMap(GameBoy * const gameboy)
         GameBoy::TilesetWidthInPixels * resolutionScaleFactor,
         GameBoy::TilesetHeightInPixels * resolutionScaleFactor
     );
-    tilesetTextureX = GameBoy::BackgroundWidthInPixels * resolutionScaleFactor / 2 -
-        GameBoy::BackgroundWidthInPixels * resolutionScaleFactor / 2;
-    tilesetTextureY = GameBoy::BackgroundHeightInPixels * resolutionScaleFactor / 2 -
-        GameBoy::BackgroundHeightInPixels * resolutionScaleFactor / 2;
 }
 
 TilesetMap::~TilesetMap() {

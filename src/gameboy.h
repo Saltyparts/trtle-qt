@@ -33,7 +33,7 @@ public:
     size_t getDisplayData(uint8_t display[], size_t length);
 
 private:
-    trtle::GameBoy * const gameboy;
+    trtle::GameBoy * gameboy;
 };
 
 #endif /* !TRTLE_QT_GAMEBOY_HPP */

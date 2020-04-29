@@ -4,11 +4,9 @@
 #include <ctime>
 #include <iostream>
 
-#define TRTLE_LOGGING
-#define TRTLE_LOGGING_VERBOSE
-
 namespace trtle {
     extern "C" {
+#define TRTLE_LOGGING_VERBOSE
 #include <trtle/trtle.h>
     }
 }
@@ -30,7 +28,7 @@ GameBoy::GameBoy() : gameboy(trtle::gameboy_create()) {
 }
 
 GameBoy::~GameBoy() {
-    trtle::gameboy_delete(gameboy);
+    trtle::gameboy_delete(&gameboy);
 }
 
 void GameBoy::initialize(bool skipBootrom) {
@@ -42,9 +40,9 @@ void GameBoy::insertCartridge(std::string const path) {
     int error = trtle::cartridge_from_file(cart, path.c_str());
     if (error) {
         std::cout << "Error loading cartridge: " << error << '\n';
-        throw error;
+        return;
     }
-    if (cart != NULL) trtle::gameboy_insert_cartridge(gameboy, *cart);
+    if (*cart != NULL) trtle::gameboy_set_cartridge(gameboy, *cart);
     delete cart;
 }
 
