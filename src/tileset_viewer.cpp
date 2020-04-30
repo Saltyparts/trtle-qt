@@ -4,7 +4,7 @@
 
 #include "gameboy.h"
 
-TilesetMap::TilesetMap(GameBoy * const gameboy) 
+TilesetViewer::TilesetViewer(GameBoy * const gameboy) 
     : gameboy(gameboy)
     , tilesetData(new uint8_t[GameBoy::TilesetDataLength]())
     , tilesetTexture(
@@ -28,17 +28,17 @@ TilesetMap::TilesetMap(GameBoy * const gameboy)
     );
 }
 
-TilesetMap::~TilesetMap() {
+TilesetViewer::~TilesetViewer() {
     delete tilesetData;
     delete tilesetTexture;
 }
 
-void TilesetMap::initializeGL() {
+void TilesetViewer::initializeGL() {
     initializeOpenGLFunctions();
     glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 }
 
-void TilesetMap::resizeGL(int width, int height) {
+void TilesetViewer::resizeGL(int width, int height) {
     int widthDiv = width / GameBoy::TilesetWidthInPixels;
     int heightDiv = height / GameBoy::TilesetHeightInPixels;
 
@@ -58,7 +58,7 @@ static uint8_t getColor(uint8_t pixelValue) {
     }
 }
 
-void TilesetMap::paintGL() {
+void TilesetViewer::paintGL() {
     uint8_t * tilesetTextureData = tilesetTexture->bits();
     gameboy->getTilesetData(tilesetData, GameBoy::TilesetDataLength);
     for (size_t i = 0; i < GameBoy::TilesetDataLength; i++) tilesetTextureData[i] = getColor(tilesetData[i]);

@@ -7,10 +7,10 @@
 class GameBoy;
 class QImage;
 
-class BackgroundMap : public QOpenGLWindow, private QOpenGLFunctions {
+class BackgroundViewer : public QOpenGLWindow, private QOpenGLFunctions {
 public:
-    BackgroundMap(GameBoy * const gameboy);
-    ~BackgroundMap();
+    BackgroundViewer(GameBoy * const gameboy);
+    ~BackgroundViewer();
 
     void initializeGL() override;
     void resizeGL(int width, int height) override;

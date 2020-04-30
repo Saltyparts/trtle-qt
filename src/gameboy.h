@@ -26,6 +26,8 @@ public:
     ~GameBoy();
 
     void insertCartridge(std::string const path);
+    bool cartridgeInserted();
+
     void initialize(bool skipBootrom);
     void updateToVBlank(bool a, bool b, bool start, bool select, bool up, bool down, bool left, bool right);
     size_t getTilesetData(uint8_t tileset[], size_t length);

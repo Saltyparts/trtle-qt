@@ -5,9 +5,11 @@
 #include <QMainWindow>
 #include <QString>
 
+class BackgroundViewer;
 class GameBoy;
 class QTimer;
 class TextureRenderWidget;
+class TilesetViewer;
 
 namespace Ui { class MainWindow; }
 
@@ -21,9 +23,12 @@ protected:
     void keyReleaseEvent(QKeyEvent* event) override;
 
 private:
+    BackgroundViewer * backgroundViewer;
+    bool skipBootrom;
     GameBoy * gameboy;
     QTimer * updateTimer;
     TextureRenderWidget * const renderWidget;
+    TilesetViewer * tilesetViewer;
     Ui::MainWindow * const ui;
     uint8_t * const textureColorCodes;
 
@@ -36,9 +41,14 @@ private:
     bool left = false;
     bool right = false;
 
-    void findCartridge();
-    void boot(QString cartridgeFileName);
-    void updateGameBoy();
+    void disableFullscreen();
+    void onActionBackgroundViewer();
+    void onActionFullscreen();
+    void onActionLoadRom();
+    void onActionReset();
+    void onActionSkipBootrom(bool toggled);
+    void onActionTilesetViewer();
+    void onUpdateTimerTimeout();
 };
 
 #endif /* !TRTLE_QT_MAIN_WINDOW_HPP */

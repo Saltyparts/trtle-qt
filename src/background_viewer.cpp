@@ -4,7 +4,7 @@
 
 #include "gameboy.h"
 
-BackgroundMap::BackgroundMap(GameBoy * const gameboy)
+BackgroundViewer::BackgroundViewer(GameBoy * const gameboy)
     : gameboy(gameboy)
     , backgroundData(new uint8_t[GameBoy::BackgroundDataLength]())
     , backgroundTexture(
@@ -32,17 +32,17 @@ BackgroundMap::BackgroundMap(GameBoy * const gameboy)
         GameBoy::BackgroundHeightInPixels * resolutionScaleFactor / 2;
 }
 
-BackgroundMap::~BackgroundMap() {
+BackgroundViewer::~BackgroundViewer() {
     delete backgroundData;
     delete backgroundTexture;
 }
 
-void BackgroundMap::initializeGL() {
+void BackgroundViewer::initializeGL() {
     initializeOpenGLFunctions();
     glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 }
 
-void BackgroundMap::resizeGL(int width, int height) {
+void BackgroundViewer::resizeGL(int width, int height) {
     int widthDiv = width / GameBoy::BackgroundWidthInPixels;
     int heightDiv = height / GameBoy::BackgroundHeightInPixels;
 
@@ -62,7 +62,7 @@ static uint8_t getColor(uint8_t pixelValue) {
     }
 }
 
-void BackgroundMap::paintGL() {
+void BackgroundViewer::paintGL() {
     uint8_t * backgroundTextureData = backgroundTexture->bits();
     gameboy->getBackgroundData(backgroundData, GameBoy::BackgroundDataLength);
     for (size_t i = 0; i < GameBoy::BackgroundDataLength; i++) backgroundTextureData[i] = getColor(backgroundData[i]);

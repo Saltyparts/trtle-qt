@@ -31,12 +31,8 @@ GameBoy::~GameBoy() {
     trtle::gameboy_delete(gameboy);
 }
 
-void GameBoy::initialize(bool skipBootrom) {
-    trtle::gameboy_initialize(gameboy, skipBootrom);
-}
-
 void GameBoy::insertCartridge(std::string const path) {
-    trtle::Cartridge ** cart = new trtle::Cartridge *();
+    trtle::Cartridge** cart = new trtle::Cartridge * ();
     int error = trtle::cartridge_from_file(cart, path.c_str());
     if (error) {
         std::cout << "Error loading cartridge: " << error << '\n';
@@ -44,6 +40,14 @@ void GameBoy::insertCartridge(std::string const path) {
     }
     if (*cart != NULL) trtle::gameboy_set_cartridge(gameboy, *cart);
     delete cart;
+}
+
+bool GameBoy::cartridgeInserted() {
+    return gameboy->cartridge != nullptr;
+}
+
+void GameBoy::initialize(bool skipBootrom) {
+    trtle::gameboy_initialize(gameboy, skipBootrom);
 }
 
 void GameBoy::updateToVBlank(bool a, bool b, bool start, bool select, bool up, bool down, bool left, bool right) {

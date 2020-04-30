@@ -77,15 +77,13 @@
      <string>Options</string>
     </property>
     <addaction name="actionFullscreen"/>
+    <addaction name="actionSkipBootrom"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuOptions"/>
    <addaction name="menuDebug"/>
   </widget>
   <action name="actionTilesetViewer">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
    <property name="enabled">
     <bool>true</bool>
    </property>
@@ -94,9 +92,6 @@
    </property>
   </action>
   <action name="actionBackgroundViewer">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
    <property name="text">
     <string>Background Viewer</string>
    </property>
@@ -124,13 +119,21 @@
    <property name="text">
     <string>Reset</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
   </action>
   <action name="actionOAMViewer">
+   <property name="text">
+    <string>OAM Viewer</string>
+   </property>
+  </action>
+  <action name="actionSkipBootrom">
    <property name="checkable">
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>OAM Viewer</string>
+    <string>Skip Bootrom</string>
    </property>
   </action>
  </widget>

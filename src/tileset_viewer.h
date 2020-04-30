@@ -7,10 +7,10 @@
 class GameBoy;
 class QImage;
 
-class TilesetMap : public QOpenGLWindow, private QOpenGLFunctions {
+class TilesetViewer : public QOpenGLWindow, private QOpenGLFunctions {
 public:
-    TilesetMap(GameBoy * const gameboy);
-    ~TilesetMap();
+    TilesetViewer(GameBoy * const gameboy);
+    ~TilesetViewer();
 
     void initializeGL() override;
     void resizeGL(int width, int height) override;
