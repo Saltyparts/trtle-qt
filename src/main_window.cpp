@@ -12,9 +12,10 @@
 
 MainWindow::MainWindow()
     : backgroundViewer(nullptr)
-    , skipBootrom(false)
     , gameboy(new GameBoy())
+    , previousPath("")
     , renderWidget(new TextureRenderWidget(GameBoy::DisplayWidthInPixels, GameBoy::DisplayHeightInPixels, QImage::Format::Format_Grayscale8, this))
+    , skipBootrom(false)
     , textureColorCodes(new uint8_t[GameBoy::DisplayWidthInPixels * GameBoy::DisplayHeightInPixels]())
     , tilesetViewer(nullptr)
     , ui(new Ui::MainWindow())
@@ -102,12 +103,13 @@ void MainWindow::onActionFullscreen() {
 }
 
 void MainWindow::onActionLoadRom() {
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),
-        "/home",
+    QString filePath = QFileDialog::getOpenFileName(this, tr("Select ROM"),
+        previousPath,
         tr("GameBoy ROM File (*.gb *.gbc *.bin)"));
-    if (fileName == nullptr) return;
+    if (filePath == nullptr) return;
 
-    gameboy->insertCartridge(fileName.toStdString().c_str());
+    previousPath = filePath;
+    gameboy->insertCartridge(filePath.toStdString().c_str());
     gameboy->initialize(skipBootrom);
     updateTimer->start(1000 / 59.64); // TODO: figure out why there's desync
 }

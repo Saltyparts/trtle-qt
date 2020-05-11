@@ -26,6 +26,7 @@ private:
     BackgroundViewer * backgroundViewer;
     bool skipBootrom;
     GameBoy * gameboy;
+    QString previousPath;
     QTimer * updateTimer;
     TextureRenderWidget * const renderWidget;
     TilesetViewer * tilesetViewer;
